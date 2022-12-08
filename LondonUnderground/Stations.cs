@@ -10,38 +10,27 @@ namespace LondonUnderground
     {
         private string name;
 
-        private bool onBakerloo;
-        private bool onCentral;
-        private bool onCircle;
-        private bool onDistrict;
-        private bool onHammersmith;
-        private bool onJubilee;
-        private bool onNorthern;
-        private bool onPiccadilly;
-        private bool onVictoria;
-        private bool onElizabeth;
+        string[] lineNames = {"Bakerloo", "Central", "Circle", "District", "Hammersmith", "Jubilee", 
+            "Northern", "Picadilly", "Victoria", "Elizabeth"};
+
+        bool[] accessToLines = new bool[10];
 
         public Stations()
         {
             name = "";
         }
-        public Stations(string name, bool onBakerloo, bool onCentral, bool onCircle, bool onDistrict, bool onHammersmith, bool onJubilee, bool onNorthern, bool onPiccadilly, bool onVictoria, bool onElizabeth)
+        public Stations(string name, bool[] accessToLines)
         {
             this.name = name;
-            this.onBakerloo = onBakerloo;
-            this.onCentral = onCentral;
-            this.onCircle = onCircle;
-            this.onDistrict = onDistrict;
-            this.onHammersmith = onHammersmith;
-            this.onJubilee = onJubilee;
-            this.onNorthern = onNorthern;
-            this.onPiccadilly = onPiccadilly;
-            this.onVictoria = onVictoria;
-            this.onElizabeth = onElizabeth;
+            
+            for(int i = 0; i < accessToLines.Length; i++) 
+            {
+                this.accessToLines[i] = accessToLines[i];   
+            }
         }
-        public bool GetCentral()
+        public bool GetLine(int lineNo)
         {
-            return onCentral;
+            return accessToLines[lineNo];
         }
         public string GetName()
         {

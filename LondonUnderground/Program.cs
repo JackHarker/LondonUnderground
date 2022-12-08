@@ -9,11 +9,8 @@ namespace LondonUnderground
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            Underground newSolution = new Underground();
-
-            
+            Underground newSolution = new Underground(); 
+            //Create a new instance of The Underground           
         }
     }
 }

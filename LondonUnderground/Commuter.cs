@@ -11,7 +11,10 @@ namespace LondonUnderground
         Stations startStation;
         Stations targetStation;
 
-      
+
+
+        string[] lineNames = {"Bakerloo", "Central", "Circle", "District", "Hammersmith", "Jubilee",
+            "Northern", "Picadilly", "Victoria", "Elizabeth"};
 
         public Commuter(Stations startStation, Stations targetStation)
         {
@@ -22,13 +25,16 @@ namespace LondonUnderground
         {
             Console.WriteLine("Currently at " + startStation.GetName() + " Heading to " + targetStation.GetName());
 
-            if( startStation.GetCentral() == true && targetStation.GetCentral()== true )
+            for (int i = 0; i < lineNames.Length; i++) 
             {
-                Console.WriteLine("I can travel on the Central line!!");
-            }
-            else
-            {
-                Console.WriteLine("No direct Route");
+                if (startStation.GetLine(i) == true && targetStation.GetLine(i) == true)
+                {
+                    Console.WriteLine("Access via " + lineNames[i]);
+                }
+                else
+                {
+                    Console.WriteLine("No access via " +lineNames[i]);
+                }
             }
         }
     }

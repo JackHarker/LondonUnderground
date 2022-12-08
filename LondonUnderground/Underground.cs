@@ -9,75 +9,78 @@ namespace LondonUnderground
 {
     internal class Underground
     {
-        Stations[] allStations = new Stations[54];
+        Stations[] allStations = new Stations[54]; 
+        //All stations available to travel to/from
+
         Commuter lateRunner;
+        //A new instance of a commuter. A commuter has a start and end goal
+
         Random random = new Random();
+        //A new instance of a random object
 
         public Underground()
         {
             LoadData();
-            lateRunner = new Commuter(allStations[random.Next(0, allStations.Length - 1)], 
+
+            lateRunner = new Commuter(allStations[random.Next(0, allStations.Length - 1)],
                 allStations[random.Next(0, allStations.Length - 1)]);
 
             SolutionLoop();
 
         }
-        public void PrintAll()
-        {
-            for (int i =0; i < allStations.Length;i++)
-            {
-                Console.WriteLine(allStations[i].GetName());
-            }
-            
-        }
-        public void PrintCentralLine()
-        {
-            for (int i = 0; i < allStations.Length; i++)
-            {
-                if(allStations[i].GetCentral() == true)
-                {
-                    Console.WriteLine(allStations[i].GetName()); 
-                }                               
-            }
-        }
-        public void SolutionLoop()
+        
+        private void SolutionLoop()
         {
             while (true)
             {
+                Console.Clear();
+
                 lateRunner.PrintStatus();
 
 
                 Console.ReadKey();
+
+                lateRunner = new Commuter(allStations[random.Next(0, allStations.Length - 1)],
+                    allStations[random.Next(0, allStations.Length - 1)]);
             }    
         }
-        public void LoadData()
+        private void LoadData()
         {
             string[] readLines = System.IO.File.ReadAllLines("C:/Users/j_w_h/source/repos/LondonUnderground/LondonUnderground/Underground.csv");
-            /*int lineCount = 0;
             
-            foreach (string line in readLines)
-            {
-                Console.WriteLine(line);
-                lineCount++;
-            }
-            Console.WriteLine(lineCount.ToString());
-            */
             for (int i = 0; i < readLines.Length; i++)
             {
-                string[] columns = readLines[i].Split(',');
+                string[] readColumns = readLines[i].Split(',');
 
-                bool[] boolConvert = new bool[columns.Length - 1];
+                bool[] stationOnLines = new bool[readColumns.Length - 1];
 
-                for (int j = 0; j < boolConvert.Length; j++)
+                for (int j = 0; j < stationOnLines.Length; j++)
                 {
-                    int temp = Convert.ToInt16(columns[j + 1]);
-                    boolConvert[j] = Convert.ToBoolean(temp);
+                    int intToBoolConversion = Convert.ToInt16(readColumns[j + 1]);
+                    stationOnLines[j] = Convert.ToBoolean(intToBoolConversion);
                 }
 
-                allStations[i] = new Stations(columns[0], boolConvert[0], boolConvert[1],
-                    boolConvert[2], boolConvert[3], boolConvert[4], boolConvert[5], boolConvert[6],
-                    boolConvert[7], boolConvert[8], boolConvert[9]);
+                allStations[i] = new Stations(readColumns[0], stationOnLines);
             }
-        }
+        }//This Method loads in data from a CSV file and populates it into an array of stations
+        public void PrintAllStations()
+        {
+            for (int i = 0; i < allStations.Length; i++)
+            {
+                Console.WriteLine(allStations[i].GetName());
+            }
+
+        } //This method prints all stations to screen
+
+        public void PrintLine(int lineNo)
+        {
+            for (int i = 0; i < allStations.Length; i++)
+            {
+                if (allStations[i].GetLine(lineNo) == true)
+                {
+                    Console.WriteLine(allStations[i].GetName());
+                }
+            }
+        } //This method checks all stations based on a number
     }
 }
