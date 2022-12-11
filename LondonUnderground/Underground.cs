@@ -14,7 +14,7 @@ namespace LondonUnderground
 
         string[] lineNames = {"Bakerloo", "Central", "Circle", "District", "Hammersmith", "Jubilee",
             "Northern", "Picadilly", "Victoria", "Elizabeth"};
-        //A list of strings to describe the 10 lines
+        //A list of strings to describe the names of our 10 lines
 
         Commuter lateRunner;
         //A new instance of a commuter. A commuter has a start and end goal
@@ -31,17 +31,14 @@ namespace LondonUnderground
 
             SolutionLoop();
 
-        }
+        }//This constructor loads data, sets up our first commuter and initialised our solution loop
 
         private void SolutionLoop()
         {
-            while (true)
+            
+            do
             {
-                Console.Clear();
-
-                CloseLine();
-                CloseStation();
-                CloseStation();
+                Console.Clear();            
 
                 SetLateRunner();
 
@@ -51,14 +48,24 @@ namespace LondonUnderground
                 
                 Console.ReadKey();
 
-                
-            }
+            } while (true);
+
+        }//This is an infinite loop of new calculations
+
+        //--------------------------------------------------------------------------------------
+        
+        public void CheckShortestRoutes()
+        {
+
+            //Use this method to construct your algorithm
+
         }
+
+        //--------------------------------------------------------------------------------------
         private void LoadData()
         {
             string[] readLines = System.IO.File.ReadAllLines("C:/Users/j_w_h/source/repos/LondonUnderground/LondonUnderground/Underground.csv");
             
-
             for (int i = 0; i < readLines.Length; i++)
             {
                 string[] readColumns = readLines[i].Split(',');
@@ -72,11 +79,9 @@ namespace LondonUnderground
                 }
 
                 allStations[i] = new Station(readColumns[0], stationIndex);
-
-                
-                    
+                  
             }
-        }//This Method loads in data from a CSV file and populates it into an array of stations
+        }//This method loads in data from a CSV file and populates it into an array of stations
 
         public void PrintAllStations()
         {
@@ -97,52 +102,13 @@ namespace LondonUnderground
                 }
             }
         } //This method checks all stations based on a number
-        public void CheckShortestRoutes()
-        {
-            List<int> possibleRoutes = new List<int>();
-
-            int[] shortestDist = { -1, -1 };
-
-            for (int i = 0; i < lineNames.Length; i++)
-            {
-                if (lateRunner.GetStartStation().CheckIfOnLine(i) == true && lateRunner.GetTargetStation().CheckIfOnLine(i) == true)
-                {
-                    Console.WriteLine("Access via " + lineNames[i]);
-
-                    possibleRoutes.Add(i);
-                }
-                else
-                {
-                    Console.WriteLine("No access via " + lineNames[i]);
-                }
-            }
-            Console.WriteLine(possibleRoutes.Count + " possible route(s)");
-
-            foreach (int j in possibleRoutes)
-            {
-                int tempDist = 0;
-                
-                tempDist = DistanceBetweenStations(lateRunner.GetStartStation(), lateRunner.GetTargetStation(), j);
-                
-                if (tempDist < shortestDist[0] || shortestDist[0] == -1)
-                {
-                    shortestDist[0] = tempDist;
-                    shortestDist[1] = j;
-                }
-                
-            }
-            if (shortestDist[0] != -1)
-            {
-                Console.WriteLine("Shortes Route via " + lineNames[shortestDist[1]] + " at only " + shortestDist[0]);
-            }
-            
-            
-        }
+        
         private void SetLateRunner()
         {
             lateRunner = new Commuter(allStations[random.Next(0, allStations.Length - 1)],
                     allStations[random.Next(0, allStations.Length - 1)]);
-        }
+        } //This resets our lateRunner with a new destination 
+
         public int DistanceBetweenStations(Station start, Station end, int lineNo)
         {
             int distance = 0;
@@ -157,7 +123,23 @@ namespace LondonUnderground
             }
 
             return distance;
-        }
+        } //This Method calculates the distance between two stations on a specific line
+
+        private List<Station>  GetStationsOnLine(int i)
+        {
+            List<Station> onLine = new List<Station>();
+
+            foreach(Station s in allStations)
+            {
+                if (s.GetLineIndex(i) != 0)
+                {
+                    onLine.Add(s);
+                }
+            }
+
+            return onLine;
+        } //This Method creates and returns a list of all stations on a specific line
+
         private void CloseStation()
         {
             int stationNo = random.Next(0, allStations.Length-1);
@@ -165,7 +147,9 @@ namespace LondonUnderground
             allStations[stationNo].CloseStation();
 
             Console.WriteLine(allStations[stationNo].GetName() + " is closed!");
-        }
+
+        } //This Method closes a random station. This could be one of our commuters stations
+
         private void CloseLine()
         {
             int lineNo = random.Next(0, lineNames.Length - 1);
@@ -178,6 +162,6 @@ namespace LondonUnderground
                 }
             }
             Console.WriteLine(lineNames[lineNo] + " is closed!");
-        }
+        }// This Method closes a random line
     }
 }
