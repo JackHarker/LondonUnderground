@@ -8,34 +8,25 @@ namespace LondonUnderground
 {
     internal class Commuter
     {
-        Stations startStation;
-        Stations targetStation;
+        private Station startStation;
+        private Station targetStation;
 
-
-
-        string[] lineNames = {"Bakerloo", "Central", "Circle", "District", "Hammersmith", "Jubilee",
-            "Northern", "Picadilly", "Victoria", "Elizabeth"};
-
-        public Commuter(Stations startStation, Stations targetStation)
+        public Commuter(Station startStation, Station targetStation)
         {
             this.startStation = startStation;
             this.targetStation = targetStation;
         }
         public void PrintStatus()
         {
-            Console.WriteLine("Currently at " + startStation.GetName() + " Heading to " + targetStation.GetName());
-
-            for (int i = 0; i < lineNames.Length; i++) 
-            {
-                if (startStation.GetLine(i) == true && targetStation.GetLine(i) == true)
-                {
-                    Console.WriteLine("Access via " + lineNames[i]);
-                }
-                else
-                {
-                    Console.WriteLine("No access via " +lineNames[i]);
-                }
-            }
+            Console.WriteLine("Currently at " + startStation.GetName() + " Heading to " + targetStation.GetName());        
+        }
+        public Station GetStartStation()
+        {
+            return startStation;
+        }
+        public Station GetTargetStation()
+        {
+            return targetStation;
         }
     }
 }

@@ -1,54 +1,54 @@
-﻿Paddington,1,0,1,1,1,0,0,0,0,1
-Edgware Road,1,0,1,1,1,0,0,0,0,0
-Marylebone,1,0,0,0,0,0,0,0,0,0
-Bayswater,0,0,1,1,0,0,0,0,0,0
-Notting Hill Gate,0,1,1,1,0,0,0,0,0,0
-High Street Kensington,0,0,1,1,0,0,0,0,0,0
-Earl's Court,0,0,0,1,0,0,0,1,0,0
-Gloucester Road,0,0,0,0,0,0,0,1,0,0
-South Kensington,0,0,1,1,0,0,0,1,0,0
-Knightsbridge,0,0,0,0,0,0,0,1,0,0
-Hyde Park Corner,0,0,0,0,0,0,0,1,0,0
-Green Park,0,0,0,0,0,1,0,1,1,0
-Picadilly Circus,1,1,0,0,0,0,0,1,0,0
-Leicester Square,0,0,0,0,0,0,1,1,0,0
-Covent Garden,0,0,0,0,0,0,0,1,0,0
-Holborn,0,1,0,0,0,0,0,1,0,0
-Russell Square,0,0,0,0,0,0,0,1,0,0
-King's Cross,0,0,1,0,1,0,1,1,1,0
-Euston,0,0,1,0,1,0,1,0,1,0
-Warren Street,0,0,0,0,0,0,1,0,1,0
-Goodge Street,0,0,0,0,0,0,1,0,0,0
-Tottenham Court Road,0,1,0,0,0,0,1,0,0,1
-Oxford Circus,1,1,0,0,0,0,0,0,1,1
-Bond Street,0,1,0,0,0,1,0,0,0,1
-Marble Arch,0,1,0,0,0,0,0,0,0,0
-Lancaster Gate,0,1,0,0,0,0,0,0,0,0
-Queensway,0,0,0,0,0,0,0,0,0,0
-St Paul's,0,1,0,0,0,0,0,0,0,0
-Chancery Lane,0,1,0,0,0,0,0,0,0,0
-Bank,0,1,1,1,0,0,1,0,0,0
-Old Street,0,0,0,0,0,0,1,0,0,0
-Angel,0,0,0,0,0,0,1,0,0,0
-London Bridge,0,0,0,0,0,1,1,0,0,0
-Southwark,0,0,0,0,0,1,0,0,0,0
-Waterloo,1,0,0,0,0,1,1,0,0,0
-Westminster,0,0,1,1,0,1,0,0,0,0
-Baker Street,1,0,1,0,1,1,0,0,0,0
-Regent's Park,0,0,0,0,0,0,0,0,0,0
-Great Portland Street,0,0,1,0,1,0,0,0,0,0
-Sloane Square,0,0,1,1,0,0,0,0,0,0
-Victoria,0,0,1,1,0,0,0,0,1,0
-St James's Park,0,0,1,1,0,0,0,0,0,0
-Charing Cross,1,0,0,0,0,0,1,0,0,0
-Embankment,1,0,1,1,0,0,1,0,0,0
-Temple,0,0,1,1,0,0,0,0,0,0
-Blackfriars,0,0,1,1,0,0,0,0,0,0
-Mansion House,0,0,1,1,0,0,0,0,0,0
-Cannon Street,0,0,1,1,0,0,0,0,0,0
-Tower Hill,0,0,1,1,0,0,0,0,0,0
-Aldgate,0,0,1,0,0,0,0,0,0,0
-Aldgate East,0,0,0,1,0,0,0,0,0,0
-Farringdon,0,0,1,0,1,0,0,0,0,1
-Barbican,0,0,1,0,1,0,0,0,0,0
-Moorgate,0,0,1,0,1,0,1,0,0,1
+﻿Paddington,1,0,1,2,1,0,0,0,0,1
+Edgware Road,2,0,2,1,2,0,0,0,0,0
+Marylebone,3,0,0,0,0,0,0,0,0,0
+Bayswater,0,0,24,3,0,0,0,0,0,0
+Notting Hill Gate,0,1,23,4,0,0,0,0,0,0
+High Street Kensington,0,0,22,5,0,0,0,0,0,0
+Earl's Court,0,0,0,6,0,0,0,1,0,0
+Gloucester Road,0,0,0,0,0,0,0,2,0,0
+South Kensington,0,0,21,7,0,0,0,3,0,0
+Knightsbridge,0,0,0,0,0,0,0,4,0,0
+Hyde Park Corner,0,0,0,0,0,0,0,5,0,0
+Green Park,0,0,0,0,0,3,0,6,2,0
+Picadilly Circus,7,0,0,0,0,0,0,7,0,0
+Leicester Square,0,0,0,0,0,0,4,8,0,0
+Covent Garden,0,0,0,0,0,0,0,9,0,0
+Holborn,0,8,0,0,0,0,0,10,0,0
+Russell Square,0,0,0,0,0,0,0,11,0,0
+King's Cross,0,0,5,0,5,0,9,12,6,0
+Euston,0,0,1,0,1,0,8,0,5,0
+Warren Street,0,0,0,0,0,0,7,0,4,0
+Goodge Street,0,0,0,0,0,0,6,0,0,0
+Tottenham Court Road,0,7,0,0,0,0,5,0,0,3
+Oxford Circus,6,6,0,0,0,0,0,0,3,0
+Bond Street,0,5,0,0,0,2,0,0,0,2
+Marble Arch,0,4,0,0,0,0,0,0,0,0
+Lancaster Gate,0,3,0,0,0,0,0,0,0,0
+Queensway,0,2,0,0,0,0,0,0,0,0
+St Paul's,0,10,0,0,0,0,0,0,0,0
+Chancery Lane,0,9,0,0,0,0,0,0,0,0
+Bank & Monument,0,11,12,16,0,0,13,0,0,0
+Old Street,0,0,0,0,0,0,11,0,0,0
+Angel,0,0,0,0,0,0,10,0,0,0
+London Bridge,0,0,0,0,0,7,14,0,0,0
+Southwark,0,0,0,0,0,6,0,0,0,0
+Waterloo,10,0,0,0,0,5,1,0,0,0
+Westminster,0,0,17,11,0,4,0,0,0,0
+Baker Street,4,0,3,0,3,1,0,0,0,0
+Regent's Park,5,0,0,0,0,0,0,0,0,0
+Great Portland Street,0,0,4,0,4,0,0,0,0,0
+Sloane Square,0,0,20,8,0,0,0,0,0,0
+Victoria,0,0,19,9,0,0,0,0,1,0
+St James's Park,0,0,18,10,0,0,0,0,0,0
+Charing Cross,8,0,0,0,0,0,3,0,0,0
+Embankment,9,0,16,12,0,0,2,0,0,0
+Temple,0,0,15,13,0,0,0,0,0,0
+Mansion House,0,0,14,14,0,0,0,0,0,0
+Cannon Street,0,0,13,15,0,0,0,0,0,0
+Tower Hill,0,0,11,17,0,0,0,0,0,0
+Aldgate,0,0,10,0,0,0,0,0,0,0
+Aldgate East,0,0,0,18,0,0,0,0,0,0
+Farringdon,0,0,6,0,6,0,0,0,0,4
+Barbican,0,0,7,0,7,0,0,0,0,0
+Moorgate,0,0,8,0,8,0,12,0,0,0
+Liverpool Street,0,12,9,0,9,0,0,0,0,5
